@@ -7,7 +7,7 @@ modprobe cryptoloop
 #modprobe aes
 
 echo "Creating file..."
-dd if=/dev/urandom of=1.img bs=1M count=50
+dd if=/dev/urandom of=1.img bs=1M count=10
 
 echo "Inserting file into loopback device /dev/loop1..."
 losetup -d /dev/loop1
