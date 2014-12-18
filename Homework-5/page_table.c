@@ -4,7 +4,7 @@
 // 
 // * Creation Date : 28-11-2014
 //
-// * Last Modified : Fri 28 Nov 2014 08:30:48 AM IRST
+// * Last Modified : Mon 15 Dec 2014 12:32:25 PM IRST
 //
 // * Created By : Parham Alvani (parham.alvani@gmail.com)
 // =======================================
@@ -21,7 +21,7 @@ void add_page_table_entry(uint8_t index, uint8_t base, uint8_t flag){
 }
 
 uint8_t get_base_addr(uint8_t index){
-	if((table[index].flag & 0x0) == 0){
+	if((table[index].flag | 0x0) == 0){
 		handler(&table[index].base, index);
 		table[index].flag |= 0x1;
 	}
