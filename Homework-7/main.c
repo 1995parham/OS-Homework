@@ -4,7 +4,7 @@
 // 
 // * Creation Date : 08-12-2014
 //
-// * Last Modified : Wed 10 Dec 2014 02:56:47 AM IRST
+// * Last Modified : Fri 09 Jan 2015 05:59:17 AM IRST
 //
 // * Created By : Parham Alvani (parham.alvani@gmail.com)
 // =======================================
@@ -127,7 +127,7 @@ int __init fifo_init_module(void){
       		printk(KERN_WARNING "fifo: can't get major %d\n", fifo_major);
       		return fifo_major;
    	}
-	return 0;   	
+	return 0;	
 }
 
 module_init(fifo_init_module);
