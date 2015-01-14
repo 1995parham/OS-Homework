@@ -5,6 +5,7 @@
 #include <semaphore.h>
 #include <sys/mman.h>
 #include <sys/types.h>
+#include <sys/wait.h>
 #include <fcntl.h>
 
 #ifndef MAX
@@ -15,7 +16,8 @@ void reader();
 void writer();
 void die(const char* msg);
 
-int main(int argc, char* argv[]){
+int main(int argc, char *argv[])
+{
 	sem_unlink("/read_bin_sem");
 	sem_t* read_bin_sem = sem_open("/read_bin_sem", O_CREAT | O_EXCL | O_RDWR, 0664, 1);
 	if(read_bin_sem == SEM_FAILED){
@@ -40,9 +42,9 @@ int main(int argc, char* argv[]){
 	if((addr = mmap(NULL, sizeof(int), PROT_READ | PROT_WRITE, MAP_SHARED, shm_fd, 0)) == MAP_FAILED){
 		die("mmap()");
 	}
-	close(shm_fd);
 	memcpy(addr, &zero, sizeof(int));
 	munmap(addr, sizeof(int));
+	close(shm_fd);
 
 	shm_unlink("/reader_counter");
 	if((shm_fd = shm_open("/reader_counter", O_RDWR | O_CREAT | O_EXCL, 0664)) < 0){
