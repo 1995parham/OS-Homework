@@ -4,7 +4,7 @@
 // 
 // * Creation Date : 08-12-2014
 //
-// * Last Modified : Fri 09 Jan 2015 05:59:17 AM IRST
+// * Last Modified : Sat 10 Jan 2015 06:34:25 AM IRST
 //
 // * Created By : Parham Alvani (parham.alvani@gmail.com)
 // =======================================
@@ -18,22 +18,22 @@
 #include <linux/types.h>        /* size_t */
 #include <linux/fcntl.h>        /* O_ACCMODE */
 #include <asm/uaccess.h>        /* copy_*_user */
- 
+
 #include "fifo.h"              /* local definitions */
- 
+
 /*
  * Parameters which can be set at load time.
  */
 int fifo_major = FIFO_MAJOR;
 int fifo_minor = 0;
- 
+
 module_param(fifo_major, int, S_IRUGO);
 module_param(fifo_minor, int, S_IRUGO);
- 
+
 MODULE_AUTHOR("Parham Alvani");
 MODULE_LICENSE("GPL");
 
- 
+
 static char queue[MAX_BUFF];
 static int head;
 static int tail;
@@ -41,7 +41,7 @@ static int tail;
 /*
  * Open and close
  */
- 
+
 static int fifo_open(struct inode *inode, struct file *filp){
 	printk(KERN_INFO "fifo: device opened\n");
 
@@ -71,9 +71,9 @@ static ssize_t fifo_read(struct file *filp, char __user *buf, size_t count, loff
    	}
 	head += count;
 	retval = count;
-   
-	out:
-   		return retval;
+
+out:
+  	return retval;
 }
 
 static ssize_t fifo_write(struct file *filp, const char __user *buf, size_t count, loff_t *f_pos){
@@ -109,7 +109,7 @@ static struct file_operations fifo_fops = {
  */
 void __exit fifo_cleanup_module(void) {
    	/* cleanup_module is never called if registering failed */
-	unregister_chrdev(fifo_major, "fifo"); 
+	unregister_chrdev(fifo_major, "fifo");
 }
 
 int __init fifo_init_module(void){
