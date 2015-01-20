@@ -1,3 +1,15 @@
+/*
+ * In The Name Of God
+ * ========================================
+ * [] File Name : fifo.h
+ *
+ * [] Creation Date : 20-01-2015
+ *
+ * [] Last Modified : Tue 20 Jan 2015 08:40:09 AM IRST
+ *
+ * [] Created By : Parham Alvani (parham.alvani@gmail.com)
+ * =======================================
+*/
 #ifndef FIFO_H
 #define FIFO_H
 
@@ -10,27 +22,11 @@
 #endif
 
 /*
- * Split minors in two parts
- */
-#define TYPE(minor)     (((minor) >> 4) & 0xf)  /* high nibble */
-#define NUM(minor)      ((minor) & 0xf)         /* low  nibble */
-
-
-/*
- * The different configurable parameters
- */
-extern int fifo_major;     /* main.c */
-
-
-/*
  * Prototypes for shared functions
  */
-
-
 static int fifo_open(struct inode *inode, struct file *filp);
 static int fifo_release(struct inode* inode, struct file *filp);
 static ssize_t fifo_read(struct file *filp, char __user *buf, size_t count, loff_t *f_pos);
 static ssize_t fifo_write(struct file *filp, const char __user *buf, size_t count, loff_t *f_pos);
 
-#endif /* _SCULL_H_ */
-
+#endif
