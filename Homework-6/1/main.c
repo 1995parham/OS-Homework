@@ -4,7 +4,7 @@
 // 
 // * Creation Date : 13-12-2014
 //
-// * Last Modified : Sat 13 Dec 2014 03:17:53 AM IRST
+// * Last Modified : Tue Jan 20 08:11:47 2015
 //
 // * Created By : Parham Alvani (parham.alvani@gmail.com)
 // ========================================
@@ -16,8 +16,9 @@
 
 #define REQ_N 10
 
-int main(int argc, char* argv[]){
-	if(argc < 2){
+int main(int argc, char* argv[])
+{
+	if (argc < 2) {
 		printf("Usage: HDD first_head_postion\n");
 		exit(1);
 	}
@@ -27,9 +28,9 @@ int main(int argc, char* argv[]){
 	int req[REQ_N];
 	srand(time(NULL));
 	printf("Requests: ");
-	for(int i = 0; i < REQ_N; i++){
+	for (int i = 0; i < REQ_N; i++) {
 		req[i] = rand() % MAX_CYLINDERS;
-		if(i % 10 == 0)
+		if (i % 10 == 0)
 			printf("\n");
 		printf("%04d ", req[i]);
 	}

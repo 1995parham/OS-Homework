@@ -4,7 +4,7 @@
 // 
 // * Creation Date : 12-12-2014
 //
-// * Last Modified : Sat 13 Dec 2014 03:17:10 AM IRST
+// * Last Modified : Tue Jan 20 08:12:44 2015
 //
 // * Created By : Parham Alvani (parham.alvani@gmail.com)
 // =======================================
@@ -15,11 +15,13 @@
 
 static int head;
 
-void set_head(int position){
+void set_head(int position)
+{
 	head = position;
 }
 
-int fcfs(int req[], int n){
+int fcfs(int req[], int n)
+{
 	#ifdef SHOW	
 		show_header();
 	#endif
@@ -119,7 +121,8 @@ int scan(int req[], int n){
 	return seek;
 }
 
-int c_scan(int req[], int n){
+int c_scan(int req[], int n)
+{
 	#ifdef SHOW
 		show_header();
 	#endif
@@ -150,7 +153,8 @@ int c_scan(int req[], int n){
 	return seek;
 }
 
-int look(int req[], int n){
+int look(int req[], int n)
+{
 	#ifdef SHOW
 		show_header();
 	#endif
@@ -209,7 +213,8 @@ int look(int req[], int n){
 	return seek;
 }
 
-int c_look(int req[], int n){
+int c_look(int req[], int n)
+{
 	#ifdef SHOW
 		show_header();
 	#endif
