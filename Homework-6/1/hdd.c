@@ -1,13 +1,15 @@
-// In The Name Of God
-// ========================================
-// * File Name : hdd.c
-// 
-// * Creation Date : 12-12-2014
-//
-// * Last Modified : Tue Jan 20 08:12:44 2015
-//
-// * Created By : Parham Alvani (parham.alvani@gmail.com)
-// =======================================
+/*
+ * In The Name Of God
+ * ========================================
+ * [] File Name : hdd.c
+ *
+ * [] Creation Date : 20-01-2015
+ *
+ * [] Last Modified : Tue 20 Jan 2015 08:25:09 AM IRST
+ *
+ * [] Created By : Parham Alvani (parham.alvani@gmail.com)
+ * =======================================
+*/
 #include <stdlib.h>
 #include <memory.h>
 #include "show.h"
@@ -44,7 +46,8 @@ int fcfs(int req[], int n)
 	return seek;
 }
 
-int sstf(int req[], int n){
+int sstf(int req[], int n)
+{
 	#ifdef SHOW
 		show_header();
 	#endif
@@ -78,7 +81,8 @@ int sstf(int req[], int n){
 	return seek;
 }
 
-int scan(int req[], int n){
+int scan(int req[], int n)
+{
 	#ifdef SHOW
 		show_header();
 	#endif
@@ -88,9 +92,9 @@ int scan(int req[], int n){
 	int single_done[n];
 	int direction = 0;
 	memset(&single_done, 0, n * sizeof(int));
-	while(done != n){
-		for(int i = 0; i < n; i++){
-			if((!single_done[i]) && req[i] == head){
+	while (done != n) {
+		for (int i = 0; i < n; i++) {
+			if ((!single_done[i]) && req[i] == head) {
 				#ifdef SHOW
 					show_head(head);
 				#endif
@@ -100,15 +104,15 @@ int scan(int req[], int n){
 			}
 		}
 		seek++;
-		if(direction){
+		if(direction) {
 			head++;
-			if(head == MAX_CYLINDERS){
+			if (head == MAX_CYLINDERS) {
 				head -= 2;
 				direction = 0;
 			}
-		}else{
+		} else {
 			head--;
-			if(head == -1){
+			if(head == -1) {
 				head += 2;
 				direction = 1;
 			}

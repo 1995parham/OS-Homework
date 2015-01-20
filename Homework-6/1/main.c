@@ -1,13 +1,15 @@
-// In The Name Of God
-// ========================================
-// * File Name : main.c
-// 
-// * Creation Date : 13-12-2014
-//
-// * Last Modified : Tue Jan 20 08:11:47 2015
-//
-// * Created By : Parham Alvani (parham.alvani@gmail.com)
-// ========================================
+/*
+ * In The Name Of God
+ * ========================================
+ * [] File Name : main.c
+ *
+ * [] Creation Date : 20-01-2015
+ *
+ * [] Last Modified : Tue 20 Jan 2015 08:25:36 AM IRST
+ *
+ * [] Created By : Parham Alvani (parham.alvani@gmail.com)
+ * =======================================
+*/
 #include <time.h>
 #include <string.h>
 #include <stdio.h>
@@ -16,16 +18,16 @@
 
 #define REQ_N 10
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
 	if (argc < 2) {
 		printf("Usage: HDD first_head_postion\n");
 		exit(1);
 	}
-	
-	int position = atoi(argv[1]);
 
+	int position = atoi(argv[1]);
 	int req[REQ_N];
+
 	srand(time(NULL));
 	printf("Requests: ");
 	for (int i = 0; i < REQ_N; i++) {
@@ -35,7 +37,7 @@ int main(int argc, char* argv[])
 		printf("%04d ", req[i]);
 	}
 	printf("\n");
-	
+
 	set_head(position);
 	printf("FCFS: %d\n", fcfs(req, REQ_N));
 
