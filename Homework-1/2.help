@@ -1,3 +1,10 @@
-using gcc -o 2 2.c -lrt for compiling 2 !!![see mq_send() man page for details]
+In The Name Of God
+
+Parham Alvani(parham.alvani@gmail.com)
+
+##################
+
+using gcc -o 2 2.c -lrt for compiling 2 [see mq_send() man page for details]
+
 message queue and shared memory need posix realtime extension library link with -lrt
 using man rtlib for details
