@@ -17,7 +17,7 @@ and send messages from/to the specified group.
 * send \[groupID\] \[message\]: allows a client to send a message to a group.
 * leave \[groupID\]: indicates that a client wants to stop sending and re-
 ceiving messages.
-* quit: closes the client application.
+* quit: closes the client application.  
 When a client joins a group, the server registers the client with the corre-
 sponding group. A client can be member of multiple groups simultaneously and
 duplicate join requests must be discarded. Similarly, when a client requests to
