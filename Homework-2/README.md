@@ -1,12 +1,12 @@
 # Assignment 2 - Socket Programming
 
-The objective of this assignment is to practice socket programming by writ-
-ing a chat application. The assignment consists of implementing two compo-
-nents: a chat client and a chat server. The server maintains information about
+The objective of this assignment is to practice socket programming by writing
+a chat application. The assignment consists of implementing two components:
+a chat client and a chat server. The server maintains information about
 the clients that have registered with a specific chat group and dispatches the
 messages sent by the clients.
-Clients can communicate with others by registering with a group. All re-
-ceived messages (from other clients) should be sent to standard output. The
+Clients can communicate with others by registering with a group. All
+received messages (from other clients) should be sent to standard output. The
 server and clients should be invoked with:
 
 * Sever: server \[server port number\]
