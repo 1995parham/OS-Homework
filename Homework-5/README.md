@@ -32,7 +32,7 @@ the TLB. In the case of a TLB-miss, the page table must be consulted. In the
 latter case, either the frame number is obtained from the page table or a page
 fault occurs.
 
-# Handling Page Faults
+## Handling Page Faults
 
 Your program will implement demand paging. The backing store (e.g., your
 disk) is represented by the file BACKING STORE.bin, a binary file of size 65,536
@@ -54,7 +54,7 @@ concerned about page replacements during a page fault. Later, we describe a
 modification to this project using a smaller amount of physical memory; at that
 point, a page-replacement strategy will be required.
 
-# Test File
+## Test File
 
 We provide the file addresses.txt, which contains integer values representing
 logical addresses ranging from 0 - 65,535 (the size of the virtual address space).
@@ -62,7 +62,7 @@ Your program will open this file, read each logical address and translate it to
 its corresponding physical address, and output the value of the signed byte at
 the physical address.
 
-# How to Begin
+## How to Begin
 
 First, write a simple program that extracts the page number and offset (an 8-bit
 page number and 8-bit page offset) from the following integer numbers:
@@ -76,7 +76,7 @@ a TLB; the TLB just makes it faster. When you are ready to implement the
 TLB, recall that it has only 16 entries, so you will need to use a replacement
 strategy when you update a full TLB. You can use FIFO for updating your TLB.
 
-# How to Run Your Program
+## How to Run Your Program
 
 Your program should run as follows:
 
@@ -110,7 +110,7 @@ Since the logical addresses in addresses.txt were generated randomly and
 do not reflect any memory access locality, do not expect to have a high TLB hit
 rate.
 
-# Modifications
+## Modifications
 
 This project assumes that physical memory is the same size as the virtual ad-
 dress space. In practice, physical memory is typically much smaller than a
