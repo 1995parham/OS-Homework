@@ -1,13 +1,15 @@
-// In The Name Of God
-// ========================================
-// * File Name : mmu.h
-// 
-// * Creation Date : 28-11-2014
-//
-// * Last Modified : Fri 28 Nov 2014 08:29:46 AM IRST
-//
-// * Created By : Parham Alvani (parham.alvani@gmail.com)
-// =======================================
+/*
+ * In The Name Of God
+ * ========================================
+ * [] File Name : mmu.h
+ *
+ * [] Creation Date : 09-02-2015
+ *
+ * [] Last Modified : Mon 09 Feb 2015 11:18:24 PM IRST
+ *
+ * [] Created By : Parham Alvani (parham.alvani@gmail.com)
+ * =======================================
+*/
 #ifndef MMU_H
 #define MMU_H
 

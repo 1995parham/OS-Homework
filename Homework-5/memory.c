@@ -1,13 +1,15 @@
-// In The Name Of God
-// ========================================
-// * File Name : memory.c
-// 
-// * Creation Date : 28-11-2014
-//
-// * Last Modified : Fri 28 Nov 2014 08:28:25 AM IRST
-//
-// * Created By : Parham Alvani (parham.alvani@gmail.com)
-// =======================================
+/*
+ * In The Name Of God
+ * ========================================
+ * [] File Name : memory.c
+ *
+ * [] Creation Date : 09-02-2015
+ *
+ * [] Last Modified : Mon 09 Feb 2015 11:18:23 PM IRST
+ *
+ * [] Created By : Parham Alvani (parham.alvani@gmail.com)
+ * =======================================
+*/
 #include "memory.h"
 #include <stdio.h>
 #include <stdint.h>

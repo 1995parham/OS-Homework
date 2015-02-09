@@ -1,13 +1,15 @@
-// In The Name Of God
-// ========================================
-// * File Name : page_table.c
-// 
-// * Creation Date : 28-11-2014
-//
-// * Last Modified : Mon 15 Dec 2014 12:32:25 PM IRST
-//
-// * Created By : Parham Alvani (parham.alvani@gmail.com)
-// =======================================
+/*
+ * In The Name Of God
+ * ========================================
+ * [] File Name : page_table.c
+ *
+ * [] Creation Date : 09-02-2015
+ *
+ * [] Last Modified : Mon 09 Feb 2015 11:18:23 PM IRST
+ *
+ * [] Created By : Parham Alvani (parham.alvani@gmail.com)
+ * =======================================
+*/
 #include "page_table.h"
 #include <stdint.h>
 
