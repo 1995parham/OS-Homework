@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 09-02-2015
  *
- * [] Last Modified : Mon 09 Feb 2015 11:18:23 PM IRST
+ * [] Last Modified : Mon 09 Feb 2015 11:28:34 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -13,6 +13,7 @@
 #include "mmu.h"
 #include "logical.h"
 #include "page_table.h"
+
 #include <stdint.h>
 #include <time.h>
 #include <stdio.h>
@@ -72,6 +73,7 @@ uint8_t l_to_p(const logical_addr* logical, int* tlb_hit){
 		add_tlb_entry(logical->page_number, frame);
 		return frame;
 	}
+	return 0;
 }
 
 void access_to_frame(uint8_t frame){

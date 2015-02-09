@@ -1,19 +1,37 @@
-OBJ=main.o logical.o page_table.o memory.o mmu.o
+# In The Name Of God
+# ========================================
+# [] File Name : Makefile
+#
+# [] Creation Date : 09-02-2015
+#
+# [] Created By : Parham Alvani (parham.alvani@gmail.com)
+# =======================================
 
-1: ${OBJ}
-	gcc -o 1 ${OBJ}
+P=1
+OBJ=main.o logical.o page_table.o memory.o mmu.o
+LIB=
+MLIB=
+
+ifdef LIB
+CFLAGS=-Wall -O0 -g -std=gnu11 \
+       $(shell pkg-config --cflags $(LIB))
+LDLIBS=$(shell pkg-config --libs $(LIB)) $(MLIB)
+else
+CFLAGS=-Wall -O0 -g -std=gnu11
+LDLIBS=$(MLIB)
+endif
+ASFLAGS=-Wall -O0 -g
+
+$(P): $(OBJ)
+	$(CC) -o $(P) $(OBJ) $(LDLIBS)
 	./memory.sh
 
-main.o: main.c logical.h mmu.h page_table.h memory.h logical.o mmu.o page_table.h memory.o
-	gcc -std=c99 -c main.c
+main.o: logical.h mmu.h page_table.h memory.h logical.o mmu.o page_table.h memory.o
 logical.o: logical.c logical.h
-	gcc -c logical.c
-page_table.o: page_table.c page_table.h
-	gcc -c page_table.c
-memory.o: memory.c memory.h
-	gcc -c memory.c
-mmu.o: mmu.c mmu.h logical.h logical.o
-	gcc -c mmu.c
+page_table.o: page_table.h
+memory.o: memory.h
+mmu.o: mmu.h logical.h logical.o
+
 .PHONY: clean
 clean:
-	rm 1 ${OBJ}
+	rm $(P) $(OBJ) memory
