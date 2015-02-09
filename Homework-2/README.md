@@ -11,8 +11,10 @@ server and clients should be invoked with:
 
 * Sever: server \[server port number\]
 * Client: client \[server host name\] \[server port number\] \[client name\]
-After successfully contacting the server, the client should support the fol-
-lowing commands:
+
+After successfully contacting the server, the client should support the
+following commands:
+
 * join [groupID]: registers the client with a group, allowing it to receive
 and send messages from/to the specified group.
 * send \[groupID\] \[message\]: allows a client to send a message to a group.
