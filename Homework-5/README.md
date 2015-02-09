@@ -37,7 +37,7 @@ fault occurs.
 Your program will implement demand paging. The backing store (e.g., your
 disk) is represented by the file BACKING STORE.bin, a binary file of size 65,536
 bytes. When a page fault occurs, you will read in a 256-byte page from the file
-1BACKING STORE.bin and store it in an available page frame in physical memory.
+BACKING STORE.bin and store it in an available page frame in physical memory.
 For example, if a logical address with page number 15 resulted in a page fault,
 your program would read in page 15 from BACKING STORE.bin (remember that
 pages begin at 0 and are 256 bytes in size) and store it in a page frame in
@@ -91,7 +91,7 @@ stored at the correct physical address. Your program is to output the following
 values:
 
 1. The logical address being translated (the integer value being read from
-2addresses.txt).
+addresses.txt).
 2. The corresponding physical address (what your program translates the
 logical address to).
 3. The signed byte value stored at the translated physical address.
