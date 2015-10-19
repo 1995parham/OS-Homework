@@ -1,7 +1,5 @@
-OS-Homework
-===========
-
-# Introduction
+# OS-Homework
+## Introduction
 This course shall lead to deepened knowledge in designing operating systems.
 The topics we will cover include concepts of operating systems and systems programming,
 such as multiprogramming systems (processes, threads, interprocess communication, and synchronization),
