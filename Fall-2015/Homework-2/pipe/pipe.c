@@ -52,7 +52,7 @@ int main(int argc, const char *argv[])
 		if (sum == n) {
 			fprintf(output, "True\n");
 		} else {
-			fprintf(input, "False\n");
+			fprintf(output, "False\n");
 		}
 
 		exit(0);
