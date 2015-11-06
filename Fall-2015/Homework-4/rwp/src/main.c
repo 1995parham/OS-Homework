@@ -1,3 +1,16 @@
+/*
+ * In The Name Of God
+ * ========================================
+ * [] File Name : main.c
+ *
+ * [] Creation Date : 06-11-2015
+ *
+ * [] Created By : Parham Alvani (parham.alvani@gmail.com)
+ * =======================================
+*/
+/*
+ * Copyright (c) 2015 Parham Alvani.
+*/
 #include <pthread.h>
 #include <stdlib.h>
 #include <stdio.h>
