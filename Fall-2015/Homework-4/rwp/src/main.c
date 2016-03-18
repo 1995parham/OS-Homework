@@ -17,14 +17,15 @@
 #include <unistd.h>
 #include <semaphore.h>
 
-#define GREEN "\x1B[32m"
-#define NORMAL  "\x1B[0m"
+#define GRN "\x1B[32m"
+#define NRM "\x1B[0m"
 
 #define READER_NUM 2
 
-int buffer = 0;
-int have_read_access = 0;
-int reader_counter = 0;
+int buffer;
+int have_read_access;
+int reader_counter;
+
 pthread_mutex_t write_mutex;
 pthread_mutex_t read_mutex;
 
@@ -39,6 +40,7 @@ int main(int argc, char *argv[])
 	int i;
 
 	pthread_mutex_init(&write_mutex, NULL);
+	pthread_mutex_init(&read_mutex, NULL);
 
 	/* reader threads section */
 	pthread_t readers[READER_NUM];
@@ -99,7 +101,7 @@ void *write_run(void *arg)
 	}
 	printf("TID %lld write on the buffer %d %stimes%s\n",
 		(long long int) pthread_self(),
-		*times, GREEN, NORMAL);
+		*times, GRN, NRM);
 	return times;
 }
 
@@ -134,7 +136,7 @@ void *read_run(void *arg)
 	}
 	printf("TID %lld write on the buffer %d %stimes%s\n",
 		(long long int) pthread_self(),
-		*times, GREEN, NORMAL);
+		*times, GRN, NRM);
 	return times;
 }
 
