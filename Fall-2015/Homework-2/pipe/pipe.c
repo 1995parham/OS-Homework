@@ -20,40 +20,39 @@ int main(int argc, const char *argv[])
 {
 	int fd_to_child[2];
 	int fd_to_parent[2];
-	pid_t childpid;
-	
+	pid_t child_pid;
+
 	pipe(fd_to_child);
 	pipe(fd_to_parent);
-	
-	if ((childpid = fork()) == -1) {
+
+	child_pid = fork();
+	if (child_pid == -1) {
 		perror("fork");
 		exit(1);
 	}
 
-	if (childpid == 0) {
+	if (child_pid == 0) {
 		close(fd_to_child[1]);
 		close(fd_to_parent[0]);
-		
+
 		FILE *input = fdopen(fd_to_child[0], "r");
 		FILE *output = fdopen(fd_to_parent[1], "w");
-		
+
 		int n;
-			
+
 		fscanf(input, "%d", &n);
 
 		int i;
 		int sum;
 
 		for (i = 1; i < n; i++) {
-			if (n % i == 0) {
+			if (n % i == 0)
 				sum += i;
-			}
 		}
-		if (sum == n) {
+		if (sum == n)
 			fprintf(output, "True\n");
-		} else {
+		else
 			fprintf(output, "False\n");
-		}
 
 		exit(0);
 	} else {
@@ -63,13 +62,13 @@ int main(int argc, const char *argv[])
 		int n;
 
 		scanf("%d", &n);
-		
+
 		FILE *output = fdopen(fd_to_child[1], "w");
 		FILE *input = fdopen(fd_to_parent[0], "r");
 
 		fprintf(output, "%d\n", n);
 		fflush(output);
-		
+
 		char answer[200];
 
 		fscanf(input, "%s", answer);
