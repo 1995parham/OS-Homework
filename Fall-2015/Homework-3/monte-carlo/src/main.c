@@ -48,7 +48,7 @@ int main(int argc, const char *argv[])
 				if (x * x + y * y <= RADIX * RADIX)
 					area_circle_1++;
 			}
-			printf("Thrad %d finished: %d\n",
+			printf("Thread %d finished: %d\n",
 				omp_get_thread_num(), area_circle_1);
 		}
 		#pragma omp section
@@ -61,7 +61,7 @@ int main(int argc, const char *argv[])
 				if (x * x + y * y <= RADIX * RADIX)
 					area_circle_2++;
 			}
-			printf("Thrad %d finished: %d\n",
+			printf("Thread %d finished: %d\n",
 				omp_get_thread_num(), area_circle_2);
 		}
 		#pragma omp section
@@ -74,7 +74,7 @@ int main(int argc, const char *argv[])
 				if (x * x + y * y <= RADIX * RADIX)
 					area_circle_3++;
 			}
-			printf("Thrad %d finished: %d\n",
+			printf("Thread %d finished: %d\n",
 				omp_get_thread_num(), area_circle_3);
 		}
 		#pragma omp section
@@ -87,7 +87,7 @@ int main(int argc, const char *argv[])
 				if (x * x + y * y <= RADIX * RADIX)
 					area_circle_4++;
 			}
-			printf("Thrad %d finished: %d\n",
+			printf("Thread %d finished: %d\n",
 				omp_get_thread_num(), area_circle_4);
 		}
 	}
