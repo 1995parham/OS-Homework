@@ -8,10 +8,8 @@
 # =======================================
 add_executable(rwp.out main.c)
 
+target_link_libraries(rwp.out pthread)
+
 # Add personal c flags
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -O0 -g -std=gnu11")
 set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS} -DDEBUG")
-
-
-set(CMAKE_C_COMPILER "/usr/local/bin/gcc")
-
