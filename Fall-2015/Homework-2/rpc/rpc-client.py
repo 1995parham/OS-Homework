@@ -6,8 +6,6 @@
 #
 # [] Created By : Parham Alvani (parham.alvani@gmail.com)
 # =======================================
-__author__ = 'Parham Alvani'
-
 
 from xmlrpc.client import ServerProxy
 
