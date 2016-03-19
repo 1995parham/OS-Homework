@@ -16,10 +16,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
-#include <semaphore.h>
-
-#define GREEN "\x1B[32m"
-#define NORMAL  "\x1B[0m"
 
 int buffer = 0;
 
@@ -31,8 +27,6 @@ void *decrease_run(void *arg);
 
 int main(int argc, char *argv[])
 {
-	int i;
-
 	/* decrease thread section */
 	pthread_t decrease;
 	pthread_attr_t decrease_attr;
@@ -56,9 +50,11 @@ int main(int argc, char *argv[])
 
 	pthread_join(increase, &return_value);
 	sum += *((int *) return_value);
+	free(return_value);
 
 	pthread_join(decrease, &return_value);
 	sum += *((int *) return_value);
+	free(return_value);
 
 	printf("Total buffer accesses: %d\n", sum);
 
