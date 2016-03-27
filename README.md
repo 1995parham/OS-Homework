@@ -5,3 +5,4 @@ The topics we will cover include concepts of operating systems and systems progr
 such as multiprogramming systems (processes, threads, interprocess communication, and synchronization),
 memory management (segmentation, paging), storage management and file systems, I/O systems (device drivers),
 security and protection, and data center operating systems.
+![Tux :)](http://www.googledrive.com/host/0B33KzMHyLoH2eVNHWFJZdmthOVk/Tux.png)
